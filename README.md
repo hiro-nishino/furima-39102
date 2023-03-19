@@ -19,11 +19,11 @@
 | Column             | Type       | Options                           |
 | ------------------ | -----------| --------------------------------- |
 | post_code          | string     | null: false                       |
-| prefectures_id     | integer    | null: false                       |
+| prefecture_id     | integer    | null: false                       |
 | city               | string     | null: false                       |
 | addresses          | string     | null: false                       |
 | building_name      | string     |                                   |
-| phone_number       | integer    | null: false                       |
+| phone_number       | string    | null: false                       |
 | order              | references | null: false  foreign_key: true   |
 ### Association
 - belongs_to :order 
@@ -38,7 +38,7 @@
 | item_category_id     | integer    | null: false                     |
 | item_condition_id    | integer    | null: false                     |
 | shipping_charge_id   | integer    | null: false                     |
-| prefectures_id       | integer    | null: false                     |
+| prefecture_id       | integer    | null: false                     |
 | days_to_ship_id      | integer    | null: false                     |
 | price                | integer    | null: false                     |
 | user                 | references | null: false foreign_key: true   |
