@@ -19,62 +19,26 @@
 ### Association
 - has_many :items
 - has_many :comments
-- has_many :likes
+- has_many :orders
 - belongs_to :birth_year
 - belongs_to :birth_month
 - belongs_to :birth_day
-- has_one :address
-- has_one :credit_card
-
-## birth_year  ActiveHash::Base
-| Column   | Type        | Options                      |
-| ------   | ------      | ---------------------------- |
-| year     | integer      | not null                    |
-### Association
-- has_many:users
-
-## birth_month   ActiveHash::Base
-| Column   | Type        | Options                      |
-| ------   | ------      | ---------------------------- |
-| month    | integer      | not null                    |
-### Association
-- has_many:users
-
-## birth_day   ActiveHash::Base
-| Column   | Type        | Options                      |
-| ------   | ------      | ---------------------------- |
-| day      | integer      | not null                    |
-### Association
-- has_many:users
 
 ## address  テーブル
 | Column             | Type       | Options                      |
 | ------------------ | -----------| ---------------------------- |
+| customer_id        | integer    | not null                     |
+| days_of_expiry     | integer    | not null                     |
+| cord_id            | integer    | not null                     |
 | post_code          | integer    | not null                     |
 | prefectures_id     | integer    | not null                     |
 | city               | string     | not null                     |
 | building_name      | string     | not null                     |
-| users_id            | references | not null foreign_key:true    |
+| orders             | references | not null foreign_key: true   |
 ### Association
-- belongs_to :user
+- belongs_to :orders
 - belongs_to :prefectures
 
-## prefectures  ActiveHash::Base
-| Column             | Type       | Options                      |
-| ------------------ | -----------| ---------------------------- |
-| prefectures_na     | integer    | not null                     |
-### Association
-- has_many:address
-
-## credit_card  テーブル
-| Column             | Type       | Options                      |
-| ------------------ | -----------| ---------------------------- |
-| customer_id        | integer    | not null                     |
-| date_of_expiry     | integer    | not null                     |
-| cord_id            | integer    | not null                     |
-| user_id            | references | not null foreign_key:true    |
-### Association
-belongs_to :user
 
 
 ## items テーブル
@@ -91,8 +55,7 @@ belongs_to :user
 | price                | integer    | not null                     |
 | users_id             | references | not null foreign_key: true   |
 ### Association
-- has_many :comments
-- has_many :likes
+- has_one  :orders
 - belongs_to :user
 - belongs_to :item_category
 - belongs_to :item_condition
@@ -100,46 +63,13 @@ belongs_to :user
 - belongs_to :region_of_origin
 - belongs_to :days_to_ship
 
-## item_category  ActiveHash::Base
-| Column             | Type       | Options                      |
-| ------------------ | -----------| ---------------------------- |
-| category           | integer    | not null                     |
-### Association
-- has_many:items
 
-## item_condition  ActiveHash::Base
-| Column             | Type       | Options                      |
-| ------------------ | -----------| ---------------------------- |
-| condition          | integer    | not null                     |
-### Association
-- has_many:items
-
-## shipping_charge  ActiveHash::Base
-| Column             | Type       | Options                      |
-| ------------------ | -----------| ---------------------------- |
-| charge             | integer    | not null                     |
-### Association
-- has_many:items
-
-## region_of origin  ActiveHash::Base
-| Column             | Type       | Options                      |
-| ------------------ | -----------| ---------------------------- |
-| origin             | integer    | not null                     |
-### Association
-- has_many:items
-
-## days_to_ship  ActiveHash::Base
-| Column             | Type       | Options                      |
-| ------------------ | -----------| ---------------------------- |
-| days               | integer    | not null                     |
-### Association
-- has_many:items
-
-## comments
+##　 
 | Column             | Type       | Options                      |
 | ------------------ | -----------| ---------------------------- |
 | users_id           | references | not null foreign_key: true   |
 | items_id           | references | not null foreign_key: true   |
-| comment            | text       | not null                     |
 ### Association
-- has_many:items
+- belongs_to:items
+- belongs_to:users
+- has_one: payment
