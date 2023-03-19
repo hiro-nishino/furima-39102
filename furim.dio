@@ -49,7 +49,11 @@
                 <mxCell id="120" value="shippig_charge._id......integer/null:false.key" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="113" vertex="1">
                     <mxGeometry y="138" width="240" height="30" as="geometry"/>
                 </mxCell>
+<<<<<<< HEAD
                 <mxCell id="121" value="prefecture_id.......integer/null:false key" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="113" vertex="1">
+=======
+                <mxCell id="121" value="prefectures_id.......integer/null:false key" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="113" vertex="1">
+>>>>>>> 8aec77515872e40640e3febe4b5fc5a2a78c46b9
                     <mxGeometry y="168" width="240" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="122" value="days_to_ship_id.......integer/null:false.  key" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="113" vertex="1">
