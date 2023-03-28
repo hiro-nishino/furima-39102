@@ -19,7 +19,7 @@
 | Column             | Type       | Options                           |
 | ------------------ | -----------| --------------------------------- |
 | post_code          | string     | null: false                       |
-| prefecture_id     | integer    | null: false                       |
+| prefecture_id      | integer    | null: false                       |
 | city               | string     | null: false                       |
 | addresses          | string     | null: false                       |
 | building_name      | string     |                                   |
@@ -38,12 +38,12 @@
 | item_category_id     | integer    | null: false                     |
 | item_condition_id    | integer    | null: false                     |
 | shipping_charge_id   | integer    | null: false                     |
-| prefecture_id       | integer    | null: false                     |
+| prefecture_id        | integer    | null: false                     |
 | days_to_ship_id      | integer    | null: false                     |
 | price                | integer    | null: false                     |
 | user                 | references | null: false foreign_key: true   |
 ### Association
-- has_one  :order
+- has_one    :order
 - belongs_to :user
 
 
