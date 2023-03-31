@@ -12,9 +12,9 @@ class Item < ApplicationRecord
 
   validates :image, :name, :detail, presence: true
 
-  validates :item_category_id, :days_to_ship_id, :item_condition_id, :shipping_charge_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
-  
+  validates :item_category_id, :days_to_ship_id, :item_condition_id, :shipping_charge_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :prefecture_id, numericality: { other_than: 0, message: "を選択してください" }
+ 
   with_options presence: true, format: { with: /\A[0-9]+\z/ } do
     validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }, presence: { message: "半角数字を入力してください" }
   end
