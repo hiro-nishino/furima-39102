@@ -1,0 +1,61 @@
+<%= render "shared/second-header"%>
+
+<div class="AccountPage">
+  <div class="AccountPage__title">
+    マイページ
+  </div><br>
+  <div class="Account__info">
+    ユーザー情報
+  </div>
+     <%# <%= render 'shared/error_messages', model: f.object %> 
+
+     
+  <div class="AccountPage__form">
+  <div class="Card__title">
+    <h2>カード情報</h2>
+  </div>
+  <div class="Card_info">
+    【カード番号】
+    <br>
+    <%= "**** **** **** " + @card[:last4] %>
+    <%# カード番号の下4桁を取得 %>
+
+    <br>
+    【有効期限】
+    <br>
+    <%= @card[:exp_month] %>
+    <%# 有効期限の「月」を取得 %>
+    /
+    <%= @card[:exp_year] %>
+    <%# 有効期限の「年」を取得 %>
+  </div>
+    <%= form_with model:@user, url: user_path(current_user), method: :put, local: true do |f| %>
+      <div class="FormField">
+        <div class="FormField__name">
+          <%= f.label :"ニックネーム" %>
+        </div>
+        <div class="FormField__name">
+          <%= f.text_field :nickname, autofocus: true %>
+        </div>
+      </div>
+      <div class="FormField">
+        <div class="FormField__email">
+          <%= f.label :"Eメール" %>
+        </div>
+        <div class="FormField__email">
+          <%= f.email_field :email %>
+        </div>
+        <br>
+      </div>
+      <%= f.submit "更新する", class:"edit-btn" %>
+    <% end %>
+    <br>
+    <div class="btn-contents">
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout-btn" %>
+      <br>
+      <%= link_to "トップへ戻る", root_path, class:"back-to-root-btn" %>
+    </div>
+  </div>
+</div> 
+
+<%= render "shared/second-footer"%>

@@ -227,3 +227,32 @@
 .inc {
   font-size: 13px;
 }
+
+
+#previews {
+  display: flex;
+  text-decoration: none;
+} 
+
+.preview-image{
+  width: 150px;
+  height: 150px;
+}
+.preview{
+  margin-right: 50px;
+}
+
+
+.image-delete-button {
+  background: #ea352d;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  width: 150px;
+  height: 20px;
+  
+}
+

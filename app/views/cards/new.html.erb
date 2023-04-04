@@ -1,0 +1,46 @@
+<div class="AccountPage__form">
+  <%= form_with  url: cards_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
+  <div class='credit-card-form'>
+      <h1 class='info-input-haedline'>
+        クレジットカード情報入力
+      </h1>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">カード情報</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div id="card-number" class="input-default"  placeholder="カード番号"> </div>
+        <div class='available-card'>
+          <%= image_tag 'card-visa.gif', class: 'card-logo'%>
+          <%= image_tag 'card-mastercard.gif', class: 'card-logo'%>
+          <%= image_tag 'card-jcb.gif', class: 'card-logo'%>
+          <%= image_tag 'card-amex.gif', class: 'card-logo'%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">有効期限</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='input-expiration-date-wrap'>
+        <div id="card-exp" class= "input-expiration-date input-default" placeholder="月/年" > </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">セキュリティコード</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div id="card-cvc" class="input-default" placeholder="CVC" > </div>
+      </div>
+    </div>
+ </div>
+ <%= f.submit "更新する", class:"edit-btn" %>
+ <% end %>
+    <br>
+    <div class="btn-contents">
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout-btn" %>
+      <br>
+      <%= link_to "トップへ戻る", root_path, class:"back-to-root-btn" %>
+    </div>
+</div>
